@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+
+    <base href="localhost">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>AXIS - AVHS</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body ng-app="app">
+<div ng-controller="MainController as main" ng-cloak layout="column" ng-init="main.init()">
+    <div layout="vertical" layout-fill>
+        <md-content class="toolbar-margin" flex>
+            <div ng-include="'toolbar.html'"></div>
+            <div ng-include="'main.html'" layout="row" flex layout-align="center center" layout-padding></div>
+        </md-content>
+        </section>
+    </div>
+</div>
+
+</body>
+<script src="bundle.js"></script>
+
+</html>
