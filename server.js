@@ -32,16 +32,16 @@ app.get('/site', function (req, res) {
  * The path for getting a device
  */
 app.get('/device/:id', function (req, res) {
-
+    console.log(req.params.id);
     var data = {
         api : "JSON",
         a : "retrieve",
         u : username,
         p : password,
-        'device[]' : req.params.id,
+        'deviceid[]' : req.params.id,
     };
     apiPost('device.php',data, function (apiResponse) {
-
+        res.send(apiResponse);
     });
 });
 
@@ -57,8 +57,6 @@ app.get('/device/:id', function (req, res) {
 function apiPost(path, data, callback) {
 
     var fullPath = url + path;
-    console.log("Path",fullPath)
-    console.log("data",data)
     var options = {
         url: fullPath,
         form: data,

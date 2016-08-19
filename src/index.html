@@ -9,13 +9,14 @@
     <title>AXIS - AVHS</title>
     <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 </head>
 <body ng-app="app">
 <div ng-controller="MainController as main" ng-cloak layout="column" ng-init="main.init()">
     <div layout="vertical" layout-fill>
         <md-content class="toolbar-margin" flex>
             <div ng-include="'toolbar.html'"></div>
-            <div ng-include="'main.html'" layout="row" flex layout-align="center center" layout-padding></div>
+            <div ng-include="'main.html'" flex layout-padding></div>
         </md-content>
         </section>
     </div>

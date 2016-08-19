@@ -1,25 +1,66 @@
-<div ng-init="main.init()">
-    <md-card>
-        <md-toolbar class="layout-padding">
-            <div class="md-toolbar-tools">
-                <md-icon md-font-icon="material-icons">backup</md-icon>
-                <h2 class="layout-padding"><span></span></h2>
-                <span flex></span>
-            </div>
-        </md-toolbar>
-        <md-card-content>
-            <md-list>
-                <md-list-item class="md-3-line" >
-                    <md-icon class="md-avatar" md-font-icon="material-icons">network_wifi</md-icon>
-                    <div class="md-list-item-text" layout="column">
+<div layout="column">
+    <div layout="row">
+        <md-card flex-gt-md="50" flex="100">
+            <md-toolbar class="layout-padding">
+                <div class="md-toolbar-tools">
+                    <md-icon md-font-set="fa">&#xf041</md-icon>
+                    <h2 class="layout-padding"><span>Sites</span></h2>
+                    <span flex></span>
+                </div>
+            </md-toolbar>
+            <md-card-content>
+                <md-list>
+                    <md-list-item ng-click="main.selectSite(site)" class="md-2-line"
+                                  ng-class='{ "active": main.selectedSite.id==site.id}' ng-repeat="site in main.sites">
+                        <md-icon class="md-avatar" md-font-icon>near_me</md-icon>
+                        <div class="md-list-item-text" layout="column">
+                            <p>Id: <b>{{site.id}}</b></p>
+                            <p>Name: <b>{{site.name}}</b></p>
+                        </div>
+                        <md-divider></md-divider>
+                    </md-list-item>
+                </md-list>
+            </md-card-content>
+        </md-card>
 
-                    </div>
-                </md-list-item>
-            </md-list>
+        <md-card flex-gt-md="50" ng-if="main.selectedSite" flex="100">
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <md-icon>video_label</md-icon>
+                    <h2 class="layout-padding"><span>Devices on site: {{main.selectedSite.name}}</span></h2>
+                    <span flex></span>
+                </div>
+            </md-toolbar>
+            <md-card-content>
+                <md-list>
+                    <md-list-item class="md-2-line" ng-click="main.selectDevice(device)"
+                                  ng-repeat="device in main.selectedSite.devices">
+                        <md-icon class="md-avatar">video_label</md-icon>
+                        <div class="md-list-item-text" layout="column">
+                            <p>Id: <b>{{device.id}}</b></p>
+                            <p>Name: <b>{{device.name}}</b></p>
+                        </div>
+                        <md-divider></md-divider>
+                    </md-list-item>
+                </md-list>
+            </md-card-content>
+        </md-card>
+    </div>
 
-        </md-card-content>
-        <md-card-actions layout="row" layout-align="end center">
-            <md-button class="md-accent md-raised">Something</md-button>
-        </md-card-actions>
-    </md-card>
+    <div layout="row" ng-if="main.selectedDevice">
+        <md-card  flex="100">
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <md-icon>video_label</md-icon>
+                    <h2 class="layout-padding"><span>Device: {{main.selectedDevice.name}}</span></h2>
+                    <span flex></span>
+
+                </div>
+            </md-toolbar>
+            <md-card-content>
+                {{main.selectedDevice}}
+            </md-card-content>
+        </md-card>
+    </div>
+
 </div>

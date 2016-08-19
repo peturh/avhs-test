@@ -19,11 +19,11 @@ app.service('APIService', ['$http', function ($http) {
             });
     };
 
-    service.getSites = function () {
+    service.getDevice = function (deviceId) {
         return $http(
             {
                 method: 'GET',
-                url: "/site"
+                url: "/device/"+deviceId
             })
             .success(function (data, status) {
                 return data;
