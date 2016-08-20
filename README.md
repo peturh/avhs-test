@@ -40,3 +40,7 @@ Some warnings probably, but they doesn't matter.
 Then run `nodejs server.js`
 
 Open browser and go to `localhost:9090`
+
+## My environment
+
+This project is tested on Linux 3.19.0-33-generic Ubuntu 15.04 x86_64 with Chrome 50.0.2661 and FireFox 44.0 
