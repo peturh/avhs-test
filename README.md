@@ -12,6 +12,19 @@ Install nodejs for your environment from [NodeJS.org](www.nodejs.org)
 
 Begin with `npm install` in root directory. Depending on your installation `sudo` might be needed.
 
+Make sure you have a `config.sh` file in the root directory of this project that exports password and usernames from the environment variables. 
+ 
+ It should look like this:
+ 
+     # !/bin/bash
+ 
+     export username=YourUserName
+     export password=YourPassword
+     export url=TheAPIURL
+     
+    
+Run it form a terminal with this command: `. config.sh`
+
 Start webpack server with `nodejs webpack-server.js`
 Start the api server with `nodejs server.js`
 
