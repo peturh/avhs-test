@@ -8,7 +8,6 @@ app.controller('MainController', ['$scope', 'APIService',
          * The init function - Get available sites to present to the user
          */
         main.init = function () {
-            console.log("init()");
             main.showloading = true;
             APIService.getSites().then(function (response) {
                 main.sites = response.data.sites;
