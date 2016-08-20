@@ -32,7 +32,7 @@ Open browser and go to `localhost:9098`
 
 ## Build the project and run "production"
 
-To build the project, make sure you have webpack installed. 
+To build the project, make sure you have webpack installed and that you are exposing the needed environment variables described in "Develop" section.
  
 Run `webpack` (To get minified version type `webpack -p`). A folder called `dist/` will be created. 
 Some warnings probably, but they doesn't matter.
