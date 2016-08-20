@@ -9,11 +9,10 @@ app.controller('MainController', ['$scope', 'APIService',
          */
         main.init = function () {
             console.log("init()");
-            main.loading = false;
+            main.showloading = true;
             APIService.getSites().then(function (response) {
-                console.log(response.data);
                 main.sites = response.data.sites;
-                main.loading = true;
+                main.showloading = false;
             })
         };
 
@@ -31,10 +30,11 @@ app.controller('MainController', ['$scope', 'APIService',
          * @param device - The selected device
          */
         main.selectDevice = function (device) {
+            main.showloading = true;
             APIService.getDevice(device.id).then(function (response) {
-                console.log(response.data.devices);
                 main.selectedDevice = response.data.devices[device.id];
-                console.log(main.selectedDevice);
+                main.showloading = false;
+
             })
         };
 

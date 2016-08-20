@@ -6,7 +6,6 @@ const username = process.env.username;
 const password = process.env.password;
 const url = process.env.url;
 
-
 app.use(serveStatic(__dirname + "/dist"));
 app.listen(9090, function () {
         console.log("running api server")
@@ -38,7 +37,7 @@ app.get('/device/:id', function (req, res) {
         a : "retrieve",
         u : username,
         p : password,
-        'deviceid[]' : req.params.id,
+        'deviceid[]' : req.params.id
     };
     apiPost('device.php',data, function (apiResponse) {
         res.send(apiResponse);

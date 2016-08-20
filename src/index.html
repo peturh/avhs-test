@@ -13,9 +13,12 @@
 </head>
 <body ng-app="app">
 <div ng-controller="MainController as main" ng-cloak layout="column" ng-init="main.init()">
+
     <div layout="vertical" layout-fill>
         <md-content class="toolbar-margin" flex>
             <div ng-include="'toolbar.html'"></div>
+            <md-progress-linear class="md-accent sm-progress-bar" ng-disabled="!main.showloading" md-mode="indeterminate"></md-progress-linear>
+
             <div ng-include="'main.html'" flex layout-padding></div>
         </md-content>
         </section>

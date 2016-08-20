@@ -1,6 +1,6 @@
 <div layout="column">
-    <div layout="row">
-        <md-card flex-gt-md="50" flex="100">
+    <div layout="column" layout-gt-md="row">
+        <md-card flex-gt-md="50" >
             <md-toolbar class="layout-padding">
                 <div class="md-toolbar-tools">
                     <md-icon md-font-set="fa">&#xf041</md-icon>
@@ -23,7 +23,7 @@
             </md-card-content>
         </md-card>
 
-        <md-card flex-gt-md="50" ng-if="main.selectedSite" flex="100">
+        <md-card flex-gt-md="50" ng-if="main.selectedSite">
             <md-toolbar>
                 <div class="md-toolbar-tools">
                     <md-icon>video_label</md-icon>
@@ -34,6 +34,7 @@
             <md-card-content>
                 <md-list>
                     <md-list-item class="md-2-line" ng-click="main.selectDevice(device)"
+                                  ng-class='{ "active": main.selectedDevice.id==device.id}'
                                   ng-repeat="device in main.selectedSite.devices">
                         <md-icon class="md-avatar">video_label</md-icon>
                         <div class="md-list-item-text" layout="column">
@@ -48,18 +49,56 @@
     </div>
 
     <div layout="row" ng-if="main.selectedDevice">
-        <md-card  flex="100">
+        <md-card flex="100">
             <md-toolbar>
                 <div class="md-toolbar-tools">
                     <md-icon>video_label</md-icon>
                     <h2 class="layout-padding"><span>Device: {{main.selectedDevice.name}}</span></h2>
                     <span flex></span>
-
+                    <label><md-icon style="font-size:18px">power_settings_new</md-icon></label>
+                    <md-switch ng-model="main.selectedDevice.enabled">{{main.selectedDevice.enabled ? "Enabled" : "Disabled"}}</md-switch>
                 </div>
             </md-toolbar>
-            <md-card-content>
-                {{main.selectedDevice}}
-            </md-card-content>
+            <md-content layout-padding>
+
+                <div layout-gt-sm="row">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <md-icon md-font-set="fa">&#xf031</md-icon>
+                        <label>Name</label>
+                        <input ng-model="main.selectedDevice.name" ng-disabled="true">
+                    </md-input-container>
+
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <md-icon class="md-avatar">video_label</md-icon>
+                        <label>Type</label>
+                        <input ng-model="main.selectedDevice.type" ng-disabled="true">
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <md-icon>lightbulb_outline</md-icon>
+                        <label>Status led</label>
+                        <input ng-model="main.selectedDevice.statusled" ng-disabled="true">
+                    </md-input-container>
+                </div>
+                <div layout-gt-sm="row">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <md-icon>info</md-icon>
+                        <label>Id</label>
+                        <input ng-model="main.selectedDevice.id" ng-disabled="true">
+                    </md-input-container>
+
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <md-icon>access_time</md-icon>
+                        <label>Timezone</label>
+                        <input ng-model="main.selectedDevice.timezone" ng-disabled="true">
+                    </md-input-container>
+
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <md-icon>build</md-icon>
+                        <label>Version</label>
+                        <input ng-model="main.selectedDevice.version" ng-disabled="true">
+                    </md-input-container>
+                </div>
+            </md-content>
         </md-card>
     </div>
 

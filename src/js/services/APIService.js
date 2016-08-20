@@ -4,6 +4,10 @@ app.service('APIService', ['$http', function ($http) {
 
     var service = {};
 
+    /**
+     * Get available sites from API
+     * @returns {*} - The sites available
+     */
     service.getSites = function () {
         return $http(
             {
@@ -18,6 +22,11 @@ app.service('APIService', ['$http', function ($http) {
                 return "Request failed";
             });
     };
+
+    /**
+     * Get additional information from device
+     * @returns {*} - The device
+     */
 
     service.getDevice = function (deviceId) {
         return $http(

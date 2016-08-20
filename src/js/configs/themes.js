@@ -15,7 +15,7 @@ app
 
         $mdThemingProvider.theme('default')
             .primaryPalette('grey',{
-                'default' : '50'
+                'default' : '200'
             }).accentPalette('myCustom',{
             'default' : '500'
         });
