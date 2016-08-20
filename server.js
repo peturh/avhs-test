@@ -8,7 +8,7 @@ const url = process.env.url;
 
 app.use(serveStatic(__dirname + "/dist"));
 app.listen(9090, function () {
-        console.log("running api server")
+        console.log("Running api server.")
     }
 );
 
