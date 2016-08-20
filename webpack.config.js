@@ -1,3 +1,8 @@
+/**
+ * Webpack config file, some stuff that's not needed for this project, but it's just my standard go-to config file.
+ *
+ */
+
 var path = require('path');
 var webpack = require('webpack');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
