@@ -1,5 +1,6 @@
 <div layout="column">
     <div layout="column" layout-gt-md="row">
+        <!-- Card with sites available -->
         <md-card flex-gt-md="50" >
             <md-toolbar class="layout-padding">
                 <div class="md-toolbar-tools">
@@ -22,7 +23,7 @@
                 </md-list>
             </md-card-content>
         </md-card>
-
+        <!-- Card with the available devcies for selected site -->
         <md-card flex-gt-md="50" ng-if="main.selectedSite">
             <md-toolbar>
                 <div class="md-toolbar-tools">
@@ -47,8 +48,9 @@
             </md-card-content>
         </md-card>
     </div>
-
+    <!-- -->
     <div layout="row" ng-if="main.selectedDevice">
+        <!-- Shows additional information about the device selected -->
         <md-card flex="100">
             <md-toolbar>
                 <div class="md-toolbar-tools">
@@ -56,7 +58,7 @@
                     <h2 class="layout-padding"><span>Device: {{main.selectedDevice.name}}</span></h2>
                     <span flex></span>
                     <label><md-icon style="font-size:18px">power_settings_new</md-icon></label>
-                    <md-switch ng-model="main.selectedDevice.enabled">{{main.selectedDevice.enabled ? "Enabled" : "Disabled"}}</md-switch>
+                    <md-switch ng-model="main.selectedDevice.enabled" ng-disabled="true">{{main.selectedDevice.enabled ? "Enabled" : "Disabled"}}</md-switch>
                 </div>
             </md-toolbar>
             <md-content layout-padding>
